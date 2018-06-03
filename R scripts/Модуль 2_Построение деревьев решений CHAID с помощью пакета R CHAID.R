@@ -309,8 +309,8 @@ development$billtype2 <- NULL
 # longdist, local и agecat в неупор€доченные
 # факторы
 names <- c("longdist", "local", "agecat")
-development[, names] <- lapply(development[, names], factor, ordered=FALSE)
-holdout[, names] <- lapply(holdout[, names], factor, ordered=FALSE)
+development[, names] <- lapply(development[, names], factor, ordered = FALSE)
+holdout[, names] <- lapply(holdout[, names], factor, ordered = FALSE)
 
 # загружаем пакет imputeMissings
 library(imputeMissings)
@@ -705,7 +705,7 @@ roc_hold <- plot.roc(holdout$churn, prob_hold[, 2],
 roc_hold2 <- plot.roc(holdout$churn, prob_hold2[,2], 
                       ci = TRUE, percent = TRUE,
                       print.auc = TRUE, 
-                      print.auc.x = 50, print.auc.y=45, 
+                      print.auc.x = 50, print.auc.y = 45, 
                       col = "#008600", add = TRUE)
 
 legend("bottomright", 
@@ -1323,7 +1323,7 @@ chd_best  <- chaid(churn ~ . ,
                    control = chaid_control(minprob = 0.01,
                                            minsplit = 200, 
                                            minbucket = 100),
-                   data= TrainValTest)
+                   data = TrainValTest)
 
 ## 2.3.12. ѕрименение модели к новым данным
 
@@ -1342,7 +1342,7 @@ lapply(newdata[sapply(newdata, is.factor)],
 sapply(newdata, function(x) sum(is.na(x)))
 
 # импутируем пропуски
-newdata$income[is.na(newdata$income)] <- mean(newdata$income, na.rm=TRUE)
+newdata$income[is.na(newdata$income)] <- mean(newdata$income, na.rm = TRUE)
 newdata <- impute(newdata, method = "median/mode")
 
 # преобразовываем переменные longdist, local, 
