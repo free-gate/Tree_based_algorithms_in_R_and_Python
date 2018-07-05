@@ -274,7 +274,8 @@ summary(glm2)
 # смотрим условия
 Simp_Learner
 
-# создаем новые переменные
+# создаем новые переменные на основе
+# условий случайного леса
 development$var <- ifelse(development$employ > 7.5 & 
                             development$custcat %in% 
                             c("БАЗОВЫЕ УСЛУГИ", "ВСЕ УСЛУГИ", "ПЛЮС УСЛУГИ"), 0, 1)
