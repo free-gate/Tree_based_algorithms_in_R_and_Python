@@ -250,7 +250,7 @@ fit_xgb_fin <- xgb.train(xgb_params,
 # гиперпараметров catboost
 library(catboost)
 grid <- expand.grid(depth = c(4, 6),
-                    learning_rate = c(0.08, 0.01),
+                    learning_rate = c(0.008, 0.01),
                     iterations = c(800, 1000),
                     l2_leaf_reg = c(0.1, 0.2),
                     rsm = c(0.85, 0.9),
