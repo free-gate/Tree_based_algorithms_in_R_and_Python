@@ -29,6 +29,7 @@
 # install.packages("car")
 # install.packages("imputeMissings")
 # install.packages("lsr")
+# install.packages("partykit")
 # install.packages("CHAID", repos="http://R-Forge.R-project.org")
 # install.packages("pROC")
 # install.packages("precrec")
