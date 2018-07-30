@@ -24,7 +24,7 @@ library(randomForest)
 set.seed(152)
 
 # строим случайный лес деревьев классификации
-model<-randomForest(response ~ ., development, importance = TRUE)
+model <- randomForest(response ~ ., development, importance = TRUE)
 
 # выводим информацию о качестве модели
 print(model)
@@ -34,7 +34,7 @@ print(model)
 table(development$response, predict(model))
 
 # строим график зависимости ошибок классификации по методу OOB
-# от количества случайно отбираемых предикторов
+# от количества деревьев
 plot(model)
 
 # настраиваем оптимальное значение mtry
@@ -414,7 +414,10 @@ library(caret)
 
 # распараллеливаем вычисления
 library(parallel)
+
+# install.packages("doParallel")
 library(doParallel)
+
 # будем использовать 3 ядра процессора
 cluster <- makeCluster(3)
 registerDoParallel(cluster)

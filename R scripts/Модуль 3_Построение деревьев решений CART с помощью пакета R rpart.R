@@ -330,8 +330,8 @@ sapply(val, function(x) sum(is.na(x)))
 set.seed(42)
 # строим модель регрессии, уменьшив пороговое 
 # значение штрафа за сложность cp
-m<-rpart(creddebt~., method="anova", data = tr,
-         control=rpart.control(cp=0.001))
+m <- rpart(creddebt ~ ., method = "anova", data = tr,
+           control = rpart.control(cp = 0.001))
 
 # выводим информацию о качестве модели
 printcp(m)

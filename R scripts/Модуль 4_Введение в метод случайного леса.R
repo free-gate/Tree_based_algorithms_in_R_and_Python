@@ -139,9 +139,8 @@ RSS <- sum((data$days_of_delinquency - predictions)^2)
 R2 <- (1 - (RSS / TSS)) * 100
 
 # печатаем результаты
-output <- c(MSE, R2)
-names(output) <- c("MSE" = MSE, "R2" = R2)
-output  
+output <- c("MSE" = MSE, "R2" = R2)
+output
 
 # Лекция 4.3. Настройка параметров случайного леса
 ## 4.3.1. Количество деревьев в ансамбле
