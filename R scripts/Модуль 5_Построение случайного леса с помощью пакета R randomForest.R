@@ -415,6 +415,8 @@ library(caret)
 # распараллеливаем вычисления
 library(parallel)
 
+# устанавливаем и загружаем
+# пакет doParallel
 # install.packages("doParallel")
 library(doParallel)
 
